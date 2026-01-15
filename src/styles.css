@@ -1,0 +1,11 @@
+/* src/styles.scss */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa; /* Fondo gris muy suave */
+  font-family: system-ui, -apple-system, sans-serif;
+}/* You can add global styles to this file, and also import other style files */
