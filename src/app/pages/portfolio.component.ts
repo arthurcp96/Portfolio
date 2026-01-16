@@ -2,15 +2,28 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../components/project-card.component';
 import { Project } from '../../models/project.interface';
+import { ContactComponent } from '../components/contact-Component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, ProjectCardComponent],
+  imports: [CommonModule, ProjectCardComponent, ContactComponent],
   template: `
+
+  <nav class="navbar">
+      <div class="nav-content">
+        <span class="logo">Arthur</span>
+        <ul class="nav-links">
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <header class="hero">
       <h1>Hola, soy <span class="highlight">Arthur</span></h1>
-      <p class="subtitle">Desarrollador de Software</p>
+      <p class="subtitle">Técnico Superior en Desarrollo de Software, recientemente graduado y en búsqueda de mi primera experiencia laboral. Aquí comparto proyectos que reflejan mi enfoque en calidad y aprendizaje continuo.</p>
+      <a href="#projects" class="cta-button">Ver mi trabajo</a>
     </header>
 
     <main class="container">
@@ -24,8 +37,10 @@ import { Project } from '../../models/project.interface';
       </section>
     </main>
 
+    <app-contact></app-contact>
+
     <footer>
-      <p>© 2025 Arthur</p>
+      <p>© 2023 - 2025 Arthur</p>
     </footer>
   `,
   styles: [`
@@ -51,6 +66,67 @@ import { Project } from '../../models/project.interface';
     }
 
     footer { text-align: center; padding: 2rem; background: #f5f5f5; margin-top: 4rem; }
+
+    .navbar {
+      background: rgba(26, 35, 126, 0.95); /* Azul oscuro semi-transparente */
+      padding: 1rem 0;
+      position: sticky; /* Se queda pegado arriba al hacer scroll */
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(5px); /* Efecto vidrio borroso */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* Estilo para el botón del Hero */
+    .cta-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background: white;
+      color: #1a237e;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
   `]
 })
 export class PortfolioComponent {

@@ -8,4 +8,13 @@ body {
   padding: 0;
   background-color: #fafafa; /* Fondo gris muy suave */
   font-family: system-ui, -apple-system, sans-serif;
-}/* You can add global styles to this file, and also import other style files */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Opcional: Para compensar la altura si decides poner una barra de navegación fija arriba en el futuro */
+section {
+  scroll-margin-top: 2rem; 
+}
