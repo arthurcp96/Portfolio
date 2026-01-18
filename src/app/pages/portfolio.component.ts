@@ -21,9 +21,16 @@ import { ContactComponent } from '../components/contact-Component';
     </nav>
 
     <header class="hero">
-      <h1>Hola, soy <span class="highlight">Arthur</span></h1>
-      <p class="subtitle">Técnico Superior en Desarrollo de Software, recientemente graduado y en búsqueda de mi primera experiencia laboral. Aquí comparto proyectos que reflejan mi enfoque en calidad y aprendizaje continuo.</p>
-      <a href="#projects" class="cta-button">Ver mi trabajo</a>
+      <div class="container hero-content">
+        <h1>Hola, soy <span class="highlight">Arthur</span></h1>
+        
+        <p class="subtitle">
+          Soy un Técnico Superior en Desarrollo de Software, recientemente graduado y en búsqueda de mi primera experiencia laboral. 
+          Aquí comparto proyectos que reflejan mi enfoque en calidad y aprendizaje continuo.
+        </p>
+        
+        <a href="#projects" class="cta-button">Ver mi trabajo</a>
+      </div>
     </header>
 
     <main class="container">
@@ -49,12 +56,32 @@ import { ContactComponent } from '../components/contact-Component';
     .hero {
       background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
       color: white;
-      text-align: center;
-      padding: 5rem 1rem;
+      padding: 5rem 0;
+      display: flex;
+      justify-content: center;
+      
+          
     }
+
+    .hero-content {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      max-width: 800px; /* Opcional: Evita que las líneas sean eternas */
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
     h1 { font-size: 3rem; margin-bottom: 0.5rem; }
     .highlight { color: #536dfe; background: white; padding: 0 10px; border-radius: 4px; }
-    .subtitle { font-size: 1.5rem; opacity: 0.9; }
+
+    
 
     .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
     h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #333; }
