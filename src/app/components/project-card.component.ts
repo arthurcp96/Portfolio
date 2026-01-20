@@ -36,7 +36,7 @@ import { Project } from '../../models/project.interface';
   `,
   styles: [`
     .card {
-      background: #fff;
+      background: var(--bg-card);
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -44,6 +44,7 @@ import { Project } from '../../models/project.interface';
       height: 100%;
       display: flex;
       flex-direction: column;
+      box-shadow: var(--shadow);
     }
     .card:hover {
       transform: translateY(-5px);
@@ -60,13 +61,15 @@ import { Project } from '../../models/project.interface';
       flex-direction: column;
       flex-grow: 1;
     }
-    h3 { margin: 0 0 0.5rem; color: #333; }
-    p { color: #666; font-size: 0.95rem; line-height: 1.5; flex-grow: 1; }
+    h3 { margin: 0 0 0.5rem; color: var(--text-main); }
+    p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; flex-grow: 1; }
     
     .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
     .tag {
-      background: #f0f0f0; color: #555;
+      background: var(--bg-color);
+      color: var(--text-main);
       padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;
+      border: 1px solid var(--border-color);
     }
 
     .actions { display: flex; gap: 1rem; margin-top: auto; }

@@ -41,25 +41,26 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [`
     .contact-section {
-      background-color: #f9fafb; /* Ligeramente diferente al fondo general para separar visualmente */
+      background-color: var(--bg-color); /* Ligeramente diferente al fondo general para separar visualmente */
       padding: 5rem 1rem;
       text-align: center;
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--border-color);
     }
 
     .container {
       max-width: 800px;
       margin: 0 auto;
+      
     }
 
     h2 {
       font-size: 2.0rem;
-      color: #333;
+      color: var(--text-main);
       margin-bottom: 1rem;
     }
 
     .description {
-      color: #666;
+      color: var(--text-secondary);
       font-size: 1.1rem;
       margin-bottom: 3rem;
       line-height: 1.6;

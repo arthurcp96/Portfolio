@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../components/project-card.component';
 import { Project } from '../../models/project.interface';
 import { ContactComponent } from '../components/contact-Component';
+import { ThemeService } from '../services/theme-service';
 
 @Component({
   selector: 'app-portfolio',
@@ -16,6 +17,22 @@ import { ContactComponent } from '../components/contact-Component';
         <ul class="nav-links">
           <li><a href="#projects">Proyectos</a></li>
           <li><a href="#contact">Contacto</a></li>
+
+          <li>
+            <button class="theme-btn" (click)="themeService.toggleTheme()" [attr.aria-label]="'Cambiar tema'">
+              @if (themeService.darkMode()) {
+                <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              } 
+              @else {
+                <svg class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              }
+            </button>
+          </li>
+
         </ul>
       </div>
     </nav>
@@ -46,7 +63,7 @@ import { ContactComponent } from '../components/contact-Component';
 
     <app-contact></app-contact>
 
-    <footer>
+    <footer class="footer">
       <p>© 2023 - 2025 Arthur</p>
     </footer>
   `,
@@ -54,14 +71,15 @@ import { ContactComponent } from '../components/contact-Component';
     :host { display: block; font-family: 'Segoe UI', sans-serif; }
     
     .hero {
-      background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
-      color: white;
+      background-color: var(--bg-color); color: var(--text-secondary);
       padding: 5rem 0;
       display: flex;
       justify-content: center;
       
           
     }
+
+    .footer {background-color: var(--bg-color); color: var(--text-secondary); }
 
     .hero-content {
       text-align: left;
@@ -79,12 +97,12 @@ import { ContactComponent } from '../components/contact-Component';
     }
 
     h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-    .highlight { color: #536dfe; background: white; padding: 0 10px; border-radius: 4px; }
+    .highlight { color: var(--text-main); background: white; padding: 0 10px; border-radius: 4px; }
 
     
 
     .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-    h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #333; }
+    h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: color: var(--text-main); }
 
     .grid {
       display: grid;
@@ -95,13 +113,14 @@ import { ContactComponent } from '../components/contact-Component';
     footer { text-align: center; padding: 2rem; background: #f5f5f5; margin-top: 4rem; }
 
     .navbar {
-      background: rgba(26, 35, 126, 0.95); /* Azul oscuro semi-transparente */
+      background: var(--nav-bg); 
       padding: 1rem 0;
       position: sticky; /* Se queda pegado arriba al hacer scroll */
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(5px); /* Efecto vidrio borroso */
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      
     }
 
     .nav-content {
@@ -111,6 +130,7 @@ import { ContactComponent } from '../components/contact-Component';
       display: flex;
       justify-content: space-between;
       align-items: center;
+      
     }
 
     .logo {
@@ -128,7 +148,7 @@ import { ContactComponent } from '../components/contact-Component';
     }
 
     .nav-links a {
-      color: white;
+      color: var(--nav-text);
       text-decoration: none;
       font-weight: 500;
       opacity: 0.8;
@@ -144,8 +164,8 @@ import { ContactComponent } from '../components/contact-Component';
       display: inline-block;
       margin-top: 2rem;
       padding: 0.8rem 2rem;
-      background: white;
-      color: #1a237e;
+      background: var(--nav-bg);
+      color: var(--nav-text);
       text-decoration: none;
       border-radius: 50px;
       font-weight: bold;
@@ -154,9 +174,36 @@ import { ContactComponent } from '../components/contact-Component';
     .cta-button:hover {
       transform: scale(1.05);
     }
+
+    /* Estilo boton dark theme */
+
+    .theme-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--nav-text);
+      transition: all 0.3s ease;
+    }
+    
+    .theme-btn:hover {
+      background: rgba(255,255,255,0.1);
+      transform: rotate(15deg);
+    }
+
+    .theme-btn .icon {
+      width: 20px;
+      height: 20px;
+    }
   `]
 })
 export class PortfolioComponent {
+  themeService = inject(ThemeService);
   // Usamos Signals para mejor reactividad
   projects = signal<Project[]>([
     {

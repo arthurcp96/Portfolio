@@ -1,13 +1,43 @@
+:root {
+  /* TEMA CLARO (Default) */
+  --bg-color: #ffffff;
+  --bg-card: #ffffff;
+  --text-main: #08095f;
+  --text-secondary: #242020;
+  --shadow: 0 4px 6px rgba(0,0,0,0.1);
+  --nav-bg: rgba(26, 35, 126, 0.95); /* El azul de tu navbar */
+  --nav-text: white;
+  --btn-hover: rgba(0,0,0,0.05);
+  --section-bg: #f9fafb; /* Color de fondo sección contacto */
+  --border-color: #eee;
+}
+
+/* TEMA OSCURO */
+[data-theme="dark"] {
+  --bg-color: #0c1522;
+  --bg-card: #101c2c;
+  --text-main: #e0e0e0;
+  --text-secondary: #ffffff;
+  --shadow: 0 4px 6px rgba(0,0,0,0.5); /* Sombra más fuerte para contraste */
+  --nav-bg: #101c2c;
+  --nav-text: #e0e0e0;
+  --btn-hover: rgba(255,255,255,0.1);
+  --section-bg: #181818;
+  --border-color: #333;
+}
+
 /* src/styles.scss */
-* {
+*{
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #fafafa; /* Fondo gris muy suave */
   font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
