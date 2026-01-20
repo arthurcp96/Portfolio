@@ -204,14 +204,14 @@ import { ThemeService } from '../services/theme-service';
 })
 export class PortfolioComponent {
   themeService = inject(ThemeService);
-  // Usamos Signals para mejor reactividad
+  
   projects = signal<Project[]>([
     {
       id: 1,
       title: 'Zenki',
-      description: 'Aplicación web de gestor de tareas personal con un asistente IA utilizando API de openAI.',
-      imageUrl: 'https://i.imgur.com/9zEJkg7.jpeg', // Reemplaza con tus imágenes
-      techStack: ['Angular', 'TypeScript', 'Amazon Web Services'],
+      description: 'Aplicación web de gestor de tareas personal con un calendario, estadisticas de las tareas finalizadas, pendientes u activas y un asistente IA conectado a API de openAI.',
+      imageUrl: 'https://i.imgur.com/9zEJkg7.jpeg', 
+      techStack: ['Angular', 'Tailwind', 'Amazon Web Services'],
       demoUrl: 'https://www.youtube.com/watch?v=h9nPMUcCpD8',
       repoUrl: 'https://github.com/ProyectoIntegrado2025/pp4'
     },
@@ -226,7 +226,7 @@ export class PortfolioComponent {
     {
       id: 3,
       title: 'AVerSiLLueve',
-      description: 'Aplicación híbrida de clma que permite guardar ciudades favoritas y alertar lluvias en base a lo guardado',
+      description: 'Aplicación híbrida de clima que permite guardar ciudades favoritas y alertar lluvias en base a lo guardado',
       imageUrl: 'https://i.imgur.com/LdcldS9.png',
       techStack: ['Angular', 'Amazon Web services', 'Ionic'],
       repoUrl: 'https://github.com/BitKND/AVerSiLLueve/tree/develop'
@@ -242,9 +242,9 @@ export class PortfolioComponent {
     {
       id: 5,
       title: 'Menu',
-      description: 'Proyecto backend personal en Java consistente en un sistema de registro de menús para restaurantes.',
+      description: 'Proyecto backend personal en Java consistente en un sistema ABM de items de un menú para restaurante.',
       imageUrl: 'https://i.imgur.com/4eUPOFH.png',
-      techStack: ['Java', 'Springboot', 'OpenWeather API', 'MySQL'],
+      techStack: ['Java', 'Springboot', 'MySQL'],
       repoUrl: 'https://github.com/arthurcp96/API-ABM-Service'
     }
   ]);
