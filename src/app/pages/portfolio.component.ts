@@ -13,10 +13,15 @@ import { ThemeService } from '../services/theme-service';
 
   <nav class="navbar">
       <div class="nav-content">
-        <span class="logo">Arthur</span>
+
+        <a href="/" class="brand">        
+          <img src="https://i.imgur.com/aAiIpj9.jpeg" alt="Foto de perfil de Arthur" class="profile-photo">
+          <span class="logo">Arthur</span>
+        </a>
+
         <ul class="nav-links">
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#projects" class="logo">Proyectos</a></li>
+          <li><a href="#contact" class="logo">Contacto</a></li>
 
           <li>
             <button class="theme-btn" (click)="themeService.toggleTheme()" [attr.aria-label]="'Cambiar tema'">
@@ -97,7 +102,7 @@ import { ThemeService } from '../services/theme-service';
     }
 
     h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-    .highlight { color: var(--text-main); background: white; padding: 0 10px; border-radius: 4px; }
+    .highlight { color: var(--title-main); background: white; padding: 0 10px; border-radius: 4px; }
 
     
 
@@ -134,9 +139,10 @@ import { ThemeService } from '../services/theme-service';
     }
 
     .logo {
-      color: white;
+      color: var(--nav-text);
       font-weight: bold;
       font-size: 1.2rem;
+      letter-spacing: 0.5px; 
     }
 
     .nav-links {
@@ -200,6 +206,35 @@ import { ThemeService } from '../services/theme-service';
       width: 20px;
       height: 20px;
     }
+
+
+.brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      /* NUEVAS PROPIEDADES: */
+      text-decoration: none; /* Quita el subrayado típico de los links */
+      cursor: pointer;       /* Muestra la manito al pasar el mouse */
+      color: white;          /* Asegura que el texto se mantenga blanco */
+      transition: opacity 0.3s ease; /* Un efectito suave al pasar el mouse */
+    }
+
+    .brand:hover {
+      opacity: 0.8;
+    }
+
+    /* Estilo de la foto circular */
+    .profile-photo {
+      width: 60px; /* Tamaño de la foto */
+      height: 60px;
+      border-radius: 50%; /* Esto es lo que la hace redonda */
+      object-fit: cover; /* Asegura que la foto no se deforme si no es cuadrada */
+      border: 2px solid rgba(255, 255, 255, 0.8); /* Un borde sutil blanco para que resalte */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombrita suave */
+    }
+
+    /* Pequeño ajuste al logo existente */
+
   `]
 })
 export class PortfolioComponent {

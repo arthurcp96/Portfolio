@@ -3,6 +3,7 @@
   --bg-color: #ffffff;
   --bg-card: #ffffff;
   --text-main: #08095f;
+  --title-main: #08095f;
   --text-secondary: #242020;
   --shadow: 0 4px 6px rgba(0,0,0,0.1);
   --nav-bg: rgba(26, 35, 126, 0.95); /* El azul de tu navbar */
@@ -17,6 +18,7 @@
   --bg-color: #0c1522;
   --bg-card: #101c2c;
   --text-main: #e0e0e0;
+  --title-main: #08095f;
   --text-secondary: #ffffff;
   --shadow: 0 4px 6px rgba(0,0,0,0.5); /* Sombra más fuerte para contraste */
   --nav-bg: #101c2c;
