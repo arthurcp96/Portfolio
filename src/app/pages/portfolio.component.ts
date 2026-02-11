@@ -47,7 +47,7 @@ import { ThemeService } from '../services/theme-service';
         <h1>Hola, soy <span class="highlight">Arthur</span></h1>
         
         <p class="subtitle">
-          Soy un Técnico Superior en Desarrollo de Software, recientemente graduado y en búsqueda de mi primera experiencia laboral. 
+          Soy un Técnico Superior en Desarrollo de Software, recientemente graduado. 
           Aquí comparto proyectos que reflejan mi enfoque en calidad y aprendizaje continuo.
         </p>
         
