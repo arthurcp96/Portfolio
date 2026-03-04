@@ -48,7 +48,7 @@ import { ThemeService } from '../services/theme-service';
         
         <p class="subtitle">
           Soy un Técnico Superior en Desarrollo de Software, recientemente graduado. 
-          Aquí comparto proyectos que reflejan mi enfoque en calidad y aprendizaje continuo.
+          Aquí comparto proyectos que fui realizando durante mi formación, así como algunos personales.
         </p>
         
         <a href="#projects" class="cta-button">Ver mi trabajo</a>
@@ -280,6 +280,7 @@ export class PortfolioComponent {
       description: 'Proyecto backend personal en Java consistente en un sistema ABM de items de un menú para restaurante.',
       imageUrl: 'https://i.imgur.com/4eUPOFH.png',
       techStack: ['Java', 'Springboot', 'MySQL'],
+      demoUrl: 'https://api-abm-service.onrender.com/',
       repoUrl: 'https://github.com/arthurcp96/API-ABM-Service'
     }
   ]);
