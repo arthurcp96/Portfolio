@@ -251,6 +251,15 @@ export class PortfolioComponent {
       repoUrl: 'https://github.com/ProyectoIntegrado2025/pp4'
     },
     {
+      id: 5,
+      title: 'Menu',
+      description: 'Proyecto backend personal en Java consistente en un sistema ABM de items de un menú para restaurante.',
+      imageUrl: 'https://i.imgur.com/4eUPOFH.png',
+      techStack: ['Java', 'Springboot', 'MySQL'],
+      demoUrl: 'https://api-abm-service.onrender.com/',
+      repoUrl: 'https://github.com/arthurcp96/API-ABM-Service'
+    },
+    {
       id: 2,
       title: 'Libro Bit',
       description: 'Sistema backend con Node que permite gestionar una biblioteca digital, administrando libros, autores, usuarios y préstamos.',
@@ -274,14 +283,6 @@ export class PortfolioComponent {
       techStack: ['Node', 'SQL Server', 'Javascript'],
       repoUrl: 'https://github.com/No-Country-simulation/s16-16-t-java-react'
     },
-    {
-      id: 5,
-      title: 'Menu',
-      description: 'Proyecto backend personal en Java consistente en un sistema ABM de items de un menú para restaurante.',
-      imageUrl: 'https://i.imgur.com/4eUPOFH.png',
-      techStack: ['Java', 'Springboot', 'MySQL'],
-      demoUrl: 'https://api-abm-service.onrender.com/',
-      repoUrl: 'https://github.com/arthurcp96/API-ABM-Service'
-    }
+
   ]);
 }
