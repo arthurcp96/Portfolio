@@ -256,7 +256,7 @@ export class PortfolioComponent {
       description: 'Proyecto backend personal en Java consistente en un sistema ABM de items de un menú para restaurante.',
       imageUrl: 'https://i.imgur.com/4eUPOFH.png',
       techStack: ['Java', 'Springboot', 'MySQL'],
-      demoUrl: 'https://api-abm-service.onrender.com/',
+      demoUrl: 'https://api-abm-service.onrender.com/swagger-ui/index.html#/',
       repoUrl: 'https://github.com/arthurcp96/API-ABM-Service'
     },
     {
